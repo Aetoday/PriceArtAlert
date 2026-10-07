@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #121826;
+  --card: #1a2332;
+  --card-2: #222d3f;
+  --line: #2d3b50;
+  --pink: #e85d8a;
+  --green: #3ecf8e;
+  --muted: #8b9bb4;
+  --text: #e8eef7;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: radial-gradient(1200px 500px at 80% -10%, #2a1a28 0%, transparent 55%),
+    var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+.field {
+  background: #141c29;
+  border: 1px solid #3a4d68;
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: var(--text);
+  min-height: 34px;
+}
+
+.field:focus {
+  outline: 1px solid var(--pink);
+  border-color: var(--pink);
+}
+
+.tab-active {
+  color: #fff;
+  background: #2a3548;
+}
