@@ -1,12 +1,23 @@
 import { NextResponse } from "next/server";
 import { checkAlerts } from "@/lib/engine";
+import { checkDelistings } from "@/lib/announcements";
+
+async function runChecks() {
+  const fired = await checkAlerts();
+  try {
+    await checkDelistings();
+  } catch (err) {
+    console.error("delist check failed", err);
+  }
+  return fired;
+}
 
 export async function POST() {
-  const fired = await checkAlerts();
+  const fired = await runChecks();
   return NextResponse.json({ fired });
 }
 
 export async function GET() {
-  const fired = await checkAlerts();
+  const fired = await runChecks();
   return NextResponse.json({ fired });
 }

@@ -426,6 +426,10 @@ export function Dashboard() {
                 <p>Цены берутся с выбранной биржи (Binance, Gate.io, MEXC).</p>
                 <p>Проверка каждые ~12 секунд, пока открыт сайт или работает `npm run watch`.</p>
                 <p>Для Telegram создай бота в @BotFather и укажи токен и свой chat id.</p>
+                <p>
+                  Делистинги Gate проверяются каждые 10 минут. Новые записи уходят в Telegram, заголовки пишутся в{" "}
+                  <span className="text-[#c5d0e0]">data/announcements.json</span>.
+                </p>
               </div>
             )}
           </aside>
