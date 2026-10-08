@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { checkAlerts } from "@/lib/engine";
-import { checkDelistings } from "@/lib/announcements";
+import { checkAnnouncements } from "@/lib/announcements";
 
 async function runChecks() {
   const fired = await checkAlerts();
   try {
-    await checkDelistings();
+    await checkAnnouncements();
   } catch (err) {
     console.error("delist check failed", err);
   }

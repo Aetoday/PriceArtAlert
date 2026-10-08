@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { checkDelistings, getAnnouncementStatus } from "@/lib/announcements";
+import { checkAnnouncements, getAnnouncementStatus } from "@/lib/announcements";
 
 export async function GET() {
   return NextResponse.json(await getAnnouncementStatus());
@@ -7,7 +7,7 @@ export async function GET() {
 
 export async function POST() {
   try {
-    const result = await checkDelistings(true);
+    const result = await checkAnnouncements(true);
     const status = await getAnnouncementStatus();
     return NextResponse.json({ ...status, ...result });
   } catch (err) {
